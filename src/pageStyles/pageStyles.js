@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../../constants"
+import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../constants"
 
 export const Wrapper = styled.div`
   .banner {
@@ -133,8 +133,7 @@ export const Wrapper = styled.div`
     align-items: center;
     width: 100%;
     padding: 2rem 5%;
-    background-color: ${({ moviesColor = COLORS.PRIMARY }) =>
-      `${moviesColor}`};
+    background-color: ${({ moviesColor = COLORS.PRIMARY }) => `${moviesColor}`};
 
     h2 {
       font-family: ${FONT_FAMILIES.TITLE};

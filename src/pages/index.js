@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
@@ -9,7 +9,7 @@ import {
   Movie,
   BottomEdgeDown,
   BottomEdgeUp,
-} from "./pageStyles/pageStyles"
+} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants"
 
 const IndexPage = () => {
@@ -46,7 +46,7 @@ const IndexPage = () => {
             }
             homePageFeaturedMovies {
               ... on WPGraphql_Movie {
-                id
+                slug
                 movie {
                   title
                   poster {
@@ -91,8 +91,8 @@ const IndexPage = () => {
         <div className="movies">
           <h2>Featured Movies</h2>
           <div className="movie-items">
-            {homePageFeaturedMovies.map(({ movie, title }) => (
-              <Movie to={`/${title}`} key={title}>
+            {homePageFeaturedMovies.map(({ movie, slug }) => (
+              <Movie to={`/${slug}`} key={slug}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
                   altText={movie.poster.altText}

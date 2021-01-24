@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../../constants"
+import { COLORS, FONT_FAMILIES, MEDIA_QUERIES } from "../../../src/constants.js"
 
 export const Wrapper = styled.div`
   background-color: ${COLORS.BLACK};
